@@ -1,0 +1,147 @@
+---
+title: "Health Disparities Across New York City: Asthma, Diabetes, and High Blood Pressure"
+format: html
+editor: visual
+---
+
+# Project 3: Team Approach
+
+## Group Members
+
+The following students are participating in this project:
+
+- Arauca I. Melendez
+
+- Yeimi M. Perez
+
+- Muntasir Mehran
+
+- Marlon Nurse
+
+- Chanice Mckenzie
+
+# Project Overview
+
+Our project will examine differences in asthma, diabetes, and high blood pressure across New York City neighborhoods. We chose this topic because these health conditions affect many people, and we want to understand how reported rates differ by neighborhood and borough.
+
+Our main research question is: **How do asthma, diabetes, and high blood pressure rates vary across New York City neighborhoods, and which communities experience the greatest health burdens?**
+
+We plan to compare health estimates across neighborhoods and boroughs, depending on the availability and comparability of the data. We will look for patterns across the three conditions without assuming that one factor directly causes another.
+
+# Collaboration Plan
+
+We plan to use the following tools to communicate and complete the project:
+
+- **Slack:** To communicate, share updates, and coordinate meetings.
+
+- **GitHub:** To store and share code, track changes, and review each other's work.
+
+- **R and Quarto:** To clean, analyze, and document the data in a reproducible format.
+
+We will divide the initial research and data preparation tasks. We will review each other's work and combine the individual contributions into one final project.
+
+# Data Sources
+
+We plan to investigate the following sources:
+
+**Source 1: NYC Environment & Health Data Portal**
+
+Website: <https://a816-dohbesp.nyc.gov/IndicatorPublic/>
+
+Potential use: Find NYC-specific information on asthma and other neighborhood health indicators.
+
+**Source 2: CDC PLACES**
+
+Website: <https://www.cdc.gov/places/tools/data-portal.html>
+
+Potential use: Find local estimates for diabetes and high blood pressure if comparable NYC neighborhood-level data are not available from the first source.
+
+We will review the available files, geographic units, years, and measurement definitions before deciding which datasets to use. We plan to download the data in CSV format when available and load it into R for cleaning and analysis.
+
+## Research Focus Areas
+
+Our project will focus on three health conditions: asthma, diabetes, and high blood pressure. Each condition will be examined separately before we compare the findings across NYC neighborhoods and boroughs.
+
+**Focus Area 1: Asthma**
+
+This section will examine asthma rates across NYC neighborhoods and boroughs. We will look for differences in reported asthma prevalence and, if the data are available, asthma-related emergency department visits or hospitalizations.
+
+**Focus Area 2: Diabetes**
+
+This section will examine diabetes rates across NYC neighborhoods and boroughs. We will compare available estimates to identify which communities report higher rates of diabetes and how the patterns vary by location.
+
+**Focus Area 3: High Blood Pressure**
+
+This section will examine high blood pressure rates across NYC neighborhoods and boroughs. We will compare available estimates to identify differences between communities and look for patterns that may overlap with the findings for asthma and diabetes.
+
+**Overall Comparison**
+
+After examining each condition separately, we will compare the findings to identify neighborhoods that experience higher reported rates across multiple conditions. The comparisons will depend on the availability of compatible data, including geographic areas, years, and measurement definitions.
+
+## Database Design
+
+We propose organizing the information into three related tables.
+
+**Table 1: Neighborhoods**
+
+- neighborhood_id (Primary Key)
+
+- neighborhood_name
+
+- borough
+
+**Table 2: HealthConditions**
+
+- condition_id (Primary Key)
+
+- condition_name
+
+**Table 3: HealthEstimates**
+
+- estimate_id (Primary Key)
+
+- neighborhood_id (Foreign Key)
+
+- condition_id (Foreign Key)
+
+- year
+
+- estimate_value
+
+- measure_unit
+
+The Neighborhoods table will store information about each neighborhood. The HealthConditions table will identify the condition being measured. The HealthEstimates table will connect each neighborhood to its health measurements for a particular year.
+
+This is a preliminary design and may be adjusted after we review the actual datasets.
+
+## Preliminary Entity-Relationship (ER) Diagram
+
+Our proposed relationships are:
+
+- One neighborhood can have many health estimates.
+
+- One health condition can appear in many health estimates.
+
+- Each health estimate belongs to one neighborhood and one health condition.
+
+We will use these relationships to create an ER diagram showing the primary keys, foreign keys, and connections between the tables.
+
+## Preliminary Work Plan
+
+1.  Locate and review the datasets for asthma, diabetes, and high blood pressure.
+
+2.  Confirm that the datasets use compatible geographic units and measurement periods.
+
+3.  Import the selected files into R.
+
+4.  Clean and standardize column names, neighborhood identifiers, and measurement values.
+
+5.  Develop the database structure and ER diagram.
+
+6.  Combine the data where appropriate and explore differences across neighborhoods.
+
+7.  Review the results as a group and prepare the final project and presentation.
+
+## Expected Outcome
+
+We expect to produce a cleaned and organized dataset that supports comparisons of asthma, diabetes, and high blood pressure across NYC neighborhoods. The final project will summarize the patterns found in the data and explain any limitations, including differences in the available years or measurement methods.
